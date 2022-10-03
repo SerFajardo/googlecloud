@@ -1,0 +1,6 @@
+imports:
+- path: cluster.jinja
+
+resources:
+- name: my-cluster
+  type: cluster.jinja

@@ -1,0 +1,26 @@
+info:
+  title: GKE cluster
+  author: Google, Inc.
+  description: |
+    Creates a GKE cluster and associated type for use in DM. The type can be
+    used in other DM configurations in the following manner:
+
+    "type: <cluster-type>:/api/v1/namespaces/{namespace}/services"
+
+
+properties:
+  nodePool.initial_node_count:
+    type: integer
+    description: Initial number of nodes desired in the cluster.
+    default: 3
+  location:
+    type: string
+    description: Zone in which the cluster should run.
+    default: us-east1-b
+  subnetwork: 
+    type: string
+    description: The name of the GCE subnetwork to which the cluster is connected.
+  network:
+    type: string
+    description: The name of the GCE network to which the cluster is connected.
+    default: default
