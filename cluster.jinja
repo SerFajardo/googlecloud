@@ -28,7 +28,13 @@ resources:
   properties:
     cluster:
       name: {{ Cluster_Cloud }}
-      initialNodeCount: {{ properties.nodePool.initial_node_count }}
+      nodePools:
+        {
+          name: node,
+          initialNodeCount: 3,
+          version: latest,
+          locations: [us-east1-a, us-east1-b]
+        }
       location: {{ properties.location  }}
       network: {{ properties.network  }}
 #      subnetwork: {{ properties.subnetwork  }}
